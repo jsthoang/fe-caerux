@@ -1,0 +1,16 @@
+{
+  "files": {
+    "static/js/1.chunk.js": "/caerux-wp-react/wp-content/themes/react_theme/static/js/1.chunk.js",
+    "static/js/1.chunk.js.map": "/caerux-wp-react/wp-content/themes/react_theme/static/js/1.chunk.js.map",
+    "main.js": "/caerux-wp-react/wp-content/themes/react_theme/static/js/main.chunk.js",
+    "main.js.map": "/caerux-wp-react/wp-content/themes/react_theme/static/js/main.chunk.js.map",
+    "runtime-main.js": "/caerux-wp-react/wp-content/themes/react_theme/static/js/bundle.js",
+    "runtime-main.js.map": "/caerux-wp-react/wp-content/themes/react_theme/static/js/bundle.js.map",
+    "index.php": "/caerux-wp-react/wp-content/themes/react_theme/index.php"
+  },
+  "entrypoints": [
+    "static/js/bundle.js",
+    "static/js/1.chunk.js",
+    "static/js/main.chunk.js"
+  ]
+}
