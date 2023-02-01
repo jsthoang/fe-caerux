@@ -1,0 +1,366 @@
+@import "../../assets/css/config/variables";
+@import "../../assets/css/mixin/function";
+
+
+header {
+	&.header {
+		.header_bg {
+			position: fixed;
+			width: 100%;
+			height: 128px;
+			background-color: $clr-base-bg-org;
+			@include sp {
+				height: 12.802vw;
+			}
+		}
+		.header_top {
+			margin: 0 auto;
+			width: 100%;
+			height: 99px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 24px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 99;
+			@include sp {
+				padding: 0 5.555vw;
+				height: 12.802vw;
+				top: 7vw;
+			}
+			&.open {
+				z-index: 9999;
+				@include sp {
+					z-index: 999;
+				}
+			}
+			.fadein_animation {
+				a {
+					img {
+						width: 100%;
+						max-width: 140px;
+						@include sp {
+							width: 33.87vw;
+							height: 9.82vw;
+						}
+					}
+				}
+			}
+		}
+		.tlt_caerux_top {
+			font-size: 50px;
+			text-align: center;
+			line-height: 74px;
+			font-weight: bold;
+			color: $clr-btn-blue;
+			padding-top: 60px;
+			transition-delay: 1.5s;
+			@include sp {
+				font-size: 6.280vw;
+				line-height: 9.178vw;
+				padding-top: 64.734vw;
+				margin-bottom: 1.449vw;
+			}
+			&.no_padding {
+				padding-top: 0;
+				color: $clr-font-disp-top;
+			}
+		}
+		.caerux_logo_main {
+			background-size: 100% auto;
+			min-height: 518px;
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			transition-delay: 1s;
+			@include sp {
+				min-height: 83.333vw;
+				background-size: 100% auto;
+			}
+			.disp_content_top {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				@include sp {
+					position: initial;
+					transform: initial;
+					text-align: center;
+					width: 100%;
+					padding-top: 23.913vw;
+				}
+				.tlt_caerux_top {
+					color: $clr-base-bg-org;
+					margin-bottom: 31.8px;
+					padding-top: 0;
+					transition-delay: 2s;
+					@include pc {
+						padding-top: 5vw;
+					}
+				}
+				p {
+					font-size: 15px;
+					line-height: 23px;
+					font-weight: 500;
+					color: $clr-font-disp_top;
+					transition-delay: 2.5s;
+					@include sp {
+						font-size: 3.140vw;
+						line-height: 4.831vw;
+					}
+					span {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+.nav_main_top {
+    #nav_toggle {
+      display: block;
+      position: fixed;
+      right: 23px;
+      top: 23px;
+      width: 53px;
+      height: 53px;
+      background: $clr-base;
+      box-shadow: 0px 0px 10px #00000029;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1001;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      @include sp {
+        right: 5.56vw;
+        top: 5.56vw;
+        width: 12.8vw;
+        height: 12.8vw;
+      }
+      > div {
+        position: relative;
+        top: 17px;
+        right: 0;
+        width: 20px;
+        left: 0;
+        margin: auto;
+        @include sp {
+          top: 4.11vw;
+          width: 4.83vw;
+        }
+        span {
+          display: block;
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          background: $clr-base-font;
+          left: 0;
+          zoom: 1;
+          -webkit-transition: .35s ease-in-out;
+          transition: .35s ease-in-out;
+          @include sp {
+            height: 0.48vw;
+          }
+          &:nth-child(1) {
+            top: 0;
+          }
+          &:nth-child(2) {
+            top: 8px;
+            @include sp {
+              top: 1.93vw;
+            }
+          }
+          &:nth-child(3) {
+            top: 16px;
+            @include sp {
+              top: 3.86vw;
+            }
+          }
+        }
+      }
+    }
+    #global_nav {
+      visibility: hidden;
+      position: absolute;
+      //display: table;
+      vertical-align: middle;
+      color: #3E3E3E;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 400px;
+      //left: 0;
+      //height: 100%;
+      //width: 45%;
+      text-align: center;
+      padding: 101px 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 100vh;
+      @include sp {
+        width: 100%;
+        padding: 14.1vw 8.695vw;
+      }
+      .list_menu {
+        padding-top: 34.79px;
+        text-align: center;
+        opacity: 0;
+        @include sp {
+          padding-top: 7.729vw;
+        }
+      }
+      a {
+        transition: none;
+      }
+    }
+    #nav_bg {
+      content: "";
+      width: 100%;
+      max-width: 400px;
+      height: 3300px;
+      right: -100%;
+      bottom: 0;
+      display: block;
+      position: fixed;
+      background: #eceff0;
+      box-shadow: 0px 0px 10px #00000029;
+      //border-radius: 50%;
+      transition: all .3s ease-out;
+      backface-visibility: hidden;
+    }
+  }
+  .header_top {
+    &.open {
+      z-index: 9999;
+      #nav_toggle {
+        background: $clr-base;
+        width: 53px;
+        height: 53px;
+        top: 23px;
+        right: 23px;
+        padding: 0;
+        box-shadow: unset;
+        @include sp {
+          width: 8.695vw;
+          height: 8.695vw;
+          top: 7.729vw;
+          right: 7.488vw;
+        }
+        > div {
+          width: 22px;
+          @include sp {
+            width: 8.695vw;
+          }
+          span {
+            height: 3px;
+            @include sp {
+              height: 0.4830vw;
+            }
+            &:nth-child(1) {
+              top: 9px;
+              -webkit-transform: rotate(-135deg);
+              transform: rotate(-135deg);
+              zoom: 1;
+            }
+            &:nth-child(2) {
+              width: 0;
+              left: 50%;
+            }
+            &:nth-child(3) {
+              top: 9px;
+              -webkit-transform: rotate(135deg);
+              transform: rotate(135deg);
+              zoom: 1;
+            }
+          }
+        }
+      }
+      #global_nav {
+        z-index: 1000;
+        visibility: visible;
+        //background-color: $clr-btn-blue;
+        .list_menu {
+          opacity: 1;
+          transition: all 0.5s ease-out;
+          transition-delay: 0.5s;
+          width: 100%;
+          text-align: center;
+          .item_menu {
+            font-size: 26px;
+            font-family: Rubik,sans-serif;
+            letter-spacing: 1.3px;
+            margin-bottom: 30px;
+            @include sp {
+              font-size: 6.280vw;
+              margin-bottom: 6.280vw;
+            }
+            a {
+              color: $clr-base-font;
+              margin-bottom: 5px;
+              display: inline-block;
+              font-weight: 700;
+              text-transform: uppercase;
+              @include sp {
+                margin-bottom: 1.207vw;
+              }
+            }
+            span {
+              display: block;
+              font-size: 9px;
+              letter-spacing: 0.9px;
+              text-align: center;
+              font-weight: bold;
+              color: $clr-base-font;
+              font-family: Rubik,sans-serif;
+              @include sp {
+                font-size: 2.898vw;
+                letter-spacing: 0.25vw;
+              }
+            }
+          }
+        }
+        .nav_logo {
+          transition: all 0.5s ease-out;
+          transition-delay: 0.5s;
+          @include sp {
+            width: 24.154vw;
+            margin: 0 auto;
+          }
+          a {
+            display: inline-block;
+            //border-radius: 50%;
+            overflow: hidden;
+            img {
+              @include sp {
+                width: 24.15vw;
+                height: 24.15vw;
+              }
+            }
+          }
+        }
+        .item_thumb {
+          margin-bottom: 100px;
+          transition: all 0.5s ease-out;
+          transition-delay: 0.5s;
+          a {
+            img {
+              width: 100%;
+              max-width: 342px;
+              @include sp {
+                width: 82.61vw;
+              }
+            }
+          }
+        }
+      }
+      #nav_bg {
+        right: 0;
+        //transform: scale(1);
+        transition: all .3s ease-out;
+        @include sp {
+          //transform: scale(1);
+        }
+      }
+    }
+  }

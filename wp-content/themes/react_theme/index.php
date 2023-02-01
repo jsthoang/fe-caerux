@@ -39,7 +39,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>React WordPress Theme</title>
-</head>
+<link href="/caerux-wp-react/wp-content/themes/react_theme/static/css/main.chunk.css?05494476e95b118efa0b" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -55,5 +55,5 @@
         To begin the development, run `npm run wpstart` or `yarn wpstart`.
         To create a production bundle, use `npm run wpbuild` or `yarn wpbuild`.
     -->
-    <script src="/caerux-wp-react/wp-content/themes/react_theme/static/js/bundle.js?4e305b0768deb2b7a3f5"></script><script src="/caerux-wp-react/wp-content/themes/react_theme/static/js/1.chunk.js?4e305b0768deb2b7a3f5"></script><script src="/caerux-wp-react/wp-content/themes/react_theme/static/js/main.chunk.js?4e305b0768deb2b7a3f5"></script></body>
+    <script src="/caerux-wp-react/wp-content/themes/react_theme/static/js/bundle.js?05494476e95b118efa0b"></script><script src="/caerux-wp-react/wp-content/themes/react_theme/static/js/1.chunk.js?05494476e95b118efa0b"></script><script src="/caerux-wp-react/wp-content/themes/react_theme/static/js/main.chunk.js?05494476e95b118efa0b"></script></body>
 </html>
