@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Logo } from "../../assets";
+import ItemMenu from "./ItemMenu";
 import "./Header.scss";
-
 function Header() {
+  const [isActive, setIsActive] = useState(false);
+  const handleClick = (event) => {
+    setIsActive((current) => !current);
+  };
   return (
     <header className="header">
-      <div className="header_top">
+      <div className={isActive ? "header_top open" : "header_top"}>
         <div className="logo fadein_animation">
           <a href="#">
             <img src={Logo} alt="logo" />
           </a>
         </div>
         <div className="nav_main_top">
-          <div id="nav_toggle">
+          <div id="nav_toggle" onClick={handleClick}>
             <div>
               <span></span>
               <span></span>
@@ -25,31 +29,7 @@ function Header() {
                 <img src={Logo} alt="logo" />
               </a>
             </div>
-            <ul className="list_menu">
-              <li className="item_menu">
-                <a href="#">Web Develop</a>
-              </li>
-              <li className="item_menu">
-                <a href="#">Web Marketing</a>
-              </li>
-              <li className="item_menu">
-                <a href="#">LandingPage</a>
-              </li>
-              <li className="item_menu">
-                <a href="#">Growth hack</a>
-              </li>
-              <li className="item_menu">
-                <a href="#">Seo</a>
-              </li>
-              <li className="item_menu">
-                <a href="#">Application</a>
-              </li>
-            </ul>
-            <div className="item_thumb">
-              <a href="#">
-                {/* <img src="assets/images/item/sp_btn_contacttop.svg" alt=""> */}
-              </a>
-            </div>
+            <ItemMenu />
           </nav>
           <div id="nav_bg"></div>
         </div>

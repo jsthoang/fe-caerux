@@ -1,0 +1,17 @@
+@import "../../assets/css/config/variables";
+@import "../../assets/css/mixin/function";
+
+.inner {
+    padding-top: 100px;
+    .featured_post {
+        .list_content_product {
+            ul {
+                display: flex;
+                width: auto;
+                max-width: 1360px;
+                margin: 0 auto;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
