@@ -8,10 +8,10 @@
         "@testing-library/react": "^9.5.0",
         "@testing-library/user-event": "^7.2.1",
         "axios": "^1.2.6",
+        "normalize.css": "^8.0.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-router-dom": "^6.8.0",
-        "sass": "^1.57.1"
+        "react-router-dom": "^6.8.0"
     },
     "scripts": {
         "crabuild": "react-scripts build",
@@ -19,7 +19,7 @@
         "crastart": "react-scripts start",
         "cratest": "react-scripts test",
         "build": "wptheme-scripts build",
-        "start": "wptheme-scripts start",
+        "start": "wptheme-scripts --openssl-legacy-provider start",
         "wpbuild": "wptheme-scripts wpbuild",
         "wpstart": "wptheme-scripts wpstart"
     },
@@ -39,5 +39,8 @@
         ]
     },
     "homepage": "/caerux-wp-react/wp-content/themes/react_theme",
-    "browserLaunchTo": "http://localhost/caerux-wp-react"
+    "browserLaunchTo": "http://localhost/caerux-wp-react",
+    "devDependencies": {
+        "sass": "^1.58.0"
+    }
 }
