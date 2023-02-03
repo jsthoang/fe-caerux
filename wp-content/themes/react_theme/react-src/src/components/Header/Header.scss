@@ -371,10 +371,18 @@ header {
                   position: absolute;
                   top: 50%;
                   left: -45px;
-                  background: #000000
+                  background: #000000;
+                  transition: all .5s ease-out;
+                }
+                &:hover::before {
+                  width: 0px;
                 }
                 a {
                   color: #000000;
+                  transition: all .5s ease-out;
+                  &:hover {
+                    margin-left: 5px;
+                  }
                 }
               }
 

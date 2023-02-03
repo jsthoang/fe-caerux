@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Avatar, Website } from "../../assets";
 import "./FeaturedPost.scss";
 const post = [
@@ -85,44 +86,46 @@ const post = [
 ];
 function FeaturedPost() {
   return (
-    <ul>
-      {post.map((user, index) => (
-        <li
-          className={
-            index === 0
-              ? "item_ item_01"
-              : "item_1" && index === 1
-              ? "item_ item_02"
-              : "item_1" && index === 2
-              ? "item_ item_03"
-              : "item_1" && index === 3
-              ? "item_ item_04"
-              : "item_1"
-          }
-          key={index}
-        >
-          <a href="#">
-            <div className="item_content">
-              <div className="thumb">
-                <img src={Website} alt="" />
-                <div className="cat_">{user.cat}</div>
-              </div>
-              <div className="txt_desp">
-                <div className="author_">
-                  <div className="avatar_">
-                    <img src={Avatar} alt="" />
-                  </div>
-                  <div className="name">{user.name}</div>
+    <section>
+      <ul className="list_post">
+        {post.map((user, index) => (
+          <li
+            className={
+              index === 0
+                ? "item_ item_01"
+                : "item_before" && index === 1
+                ? "item_ item_02"
+                : "item_before" && index === 2
+                ? "item_ item_03"
+                : "item_before" && index === 3
+                ? "item_ item_04"
+                : "item_before"
+            }
+            key={index}
+          >
+            <a href="#">
+              <div className="item_content">
+                <div className="thumb">
+                  <img src={Website} alt="" />
+                  <div className="cat_">{user.cat}</div>
                 </div>
-                <span className="date_">{user.date}</span>
-                <h3>{user.tlt}</h3>
-                <p>{user.txt}</p>
+                <div className="txt_desp">
+                  <div className="author_">
+                    <div className="avatar_">
+                      <img src={Avatar} alt="" />
+                    </div>
+                    <div className="name">{user.name}</div>
+                  </div>
+                  <span className="date_">{user.date}</span>
+                  <h3>{user.tlt}</h3>
+                  <p>{user.txt}</p>
+                </div>
               </div>
-            </div>
-          </a>
-        </li>
-      ))}
-    </ul>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 
