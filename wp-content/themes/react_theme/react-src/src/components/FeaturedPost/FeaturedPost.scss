@@ -1,12 +1,72 @@
 @import "../../assets/css/config/variables";
 @import "../../assets/css/mixin/function";
-
+.post {
+    h2 {
+    font-size: 3.4rem;
+    line-height: 50px;
+    display: inline-block;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    color: #000000;
+    @include pc {
+        line-height: get_pc(50);
+        margin-bottom: get_pc(40);
+    }
+    @include sp {
+        margin-bottom: get_sp(40);
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50px;
+        display: block;
+        width: 266px;
+        height: 1px;
+        background: #000000;
+        @include pc {
+            top: get_pc(50);
+            width: 100%;
+            height: get_pc(1);
+        }
+    }
+    }
+    .txt {
+        font-family: Rubik, sans-serif;
+        font-style: italic;
+        position: absolute;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 100px;
+        left: 35%;
+        opacity: 0.1;
+        text-align: left;
+        @include pc {
+            font-size: get_pc(100);
+        }
+        @include sp {
+            font-size: 54px;
+            margin-bottom: get_sp(40);
+            left: 50%;
+            text-align: center;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+    }
+}
 .list_post {
     display: flex;
     width: auto;
     max-width: 1360px;
-    margin: 0 auto;
+    margin: 40px auto;
     flex-wrap: wrap;
+    @include pc {
+        margin: get_pc(40) auto;
+        max-width: get_pc(1360);
+    }
+    @include sp {
+        display: block;
+    }
     .item_ {
         position: relative;
         z-index: 100;
@@ -15,6 +75,11 @@
         padding-bottom: 146px;
         border-radius: 20px;
         box-shadow: 0 10px 20px 0 rgb(6 0 0 / 1%);
+        @include pc {
+            margin-bottom: get_pc(30);
+            padding-bottom: get_pc(146);
+            border-radius: get_pc(20);
+        }
         a {
             display: block;
             color: #283135;
@@ -45,6 +110,12 @@
                     background: #283135;
                     font-size: 12px;
                     border-radius: 20px 0 0;
+                    @include pc {
+                        line-height: get_pc(24);
+                        height: get_pc(24);
+                        padding: 0 get_pc(20) 0 get_pc(30);
+                        font-size: get_pc(12);
+                    }
                     &:after {
                         position: absolute;
                         top: 0;
@@ -54,6 +125,11 @@
                         content: '';
                         border-radius: 0 0 24px;
                         background: #283135;
+                        @include pc {
+                            right: get_pc(-20);
+                            width: get_pc(24);
+                            height: get_pc(24);
+                        }
                     }
                 }
             }
@@ -66,22 +142,36 @@
                 border-radius: 0 0 20px 20px;
                 background: #fff;
                 text-align: left;
+                @include pc {
+                    padding: 0 get_pc(30);
+                    border-radius: 0 0 get_pc(20) get_pc(20);
+                }
                 .author_ {
                     position: absolute;
                     left: 30px;
                     display: flex;
                     z-index: 2;
                     text-align: center;
+                    @include pc {
+                        left: get_pc(30);
+                    }
                     .avatar_ {
                         display: inline-block;
                         overflow: hidden;
                         border-radius: 50%;
                         width: 46px;
                         height: 46px;
+                        @include pc {
+                            width: get_pc(46);
+                            height: get_pc(46);
+                        }
                     }
                     .name {
                         transform: scale(.9);
                         font-size: 10px;
+                        @include pc {
+                            font-size: get_pc(10);
+                        }
                     }
                 }
                 .date_ {
@@ -94,6 +184,11 @@
                     bottom: 30px;
                     display: block;
                     text-align: right;
+                    @include pc {
+                        font-size: get_pc(12);
+                        right: get_pc(30);
+                        bottom: get_pc(30);
+                    }
                 }
                 h3 {
                     font-weight: 700;
@@ -106,6 +201,10 @@
                     -webkit-font-smoothing: antialiased;
                     font-size: 17px;
                     padding-bottom: 30px;
+                    @include pc {
+                        font-size: get_pc(17);
+                        padding-bottom: get_pc(30);
+                    }
                 }
                 p {
                     font-size: 13px;
@@ -140,6 +239,14 @@
                 right: 30px;
                 width: 60px;
                 height: 60px;
+                @include pc {
+                    font-size: get_pc(12);
+                    line-height: get_pc(60);
+                    top: get_pc(-30);
+                    right: get_pc(30);
+                    width: get_pc(60);
+                    height: get_pc(60);
+                }
             }
             .item_content {
                 >.thumb {
@@ -151,6 +258,10 @@
                     transition: all .3s;
                     border-radius: 20px;
                     box-shadow: 5px 10px 15px 0 rgba(6, 0, 0, 0.02);
+                    @include pc {
+                        left: get_pc(-30);
+                        border-radius: get_pc(20);
+                    }
                     img {
                         border-radius: 20px;
                     }
@@ -161,22 +272,42 @@
                     margin-left: 59%;
                     padding: 30px;
                     border-radius: 0 20px 20px 0;
+                    @include pc {
+                        padding: get_pc(30);
+                    }
                     .author_ {
                         bottom: 30px;
+                        @include pc {
+                            bottom: get_pc(30);
+                        }
                         .thumb {
                             margin-right: 10px;
+                            @include pc {
+                                margin-right: get_pc(10);
+                            }
                         }
                         .name {
                             margin-top: 18px;
+                            @include pc {
+                                margin-top: get_pc(18);
+                            }
                         }
                     }
                     .date_ {
                         right: 30px;
                         bottom: 40px;
+                        @include pc {
+                            right: get_pc(30);
+                            bottom: get_pc(40);
+                        }
                     }
                     h3 {
                         font-size: 25px;
                         margin-top: 80px;
+                        @include pc {
+                            font-size: get_pc(25);
+                            margin-top: get_pc(80);
+                        }
                     }
                 }
             }
@@ -202,13 +333,24 @@
                 .txt_desp {
                     min-height: 148px;
                     padding-top: 70px;
+                    @include pc {
+                        min-height: get_pc(148);
+                        padding-top: get_pc(70);
+                    }
                     .author_ {
                         top: -20px;
                         display: block;
+                        @include pc {
+                            top: get_pc(-20);
+                        }
                     }
                     .date_ {
                         top: 15px;
                         right: 20px;
+                        @include pc {
+                            top: get_pc(15);
+                            right: get_pc(20);
+                        }
                     }
                     p {
                         overflow: hidden;
@@ -223,6 +365,9 @@
                 .item_content {
                     .txt_desp {
                         min-height: 240px;
+                        @include pc {
+                            min-height: get_pc(240);
+                        }
                         p {
                             visibility: visible;
                             height: 120px;
@@ -230,6 +375,10 @@
                             padding-bottom: 30px;
                             opacity: 1;
                             -ms-filter: "alpha(opacity=100)";
+                            @include pc {
+                                height: get_pc(120);
+                                padding-bottom: get_pc(30);
+                            }
                         }
                     }
                 }
@@ -237,6 +386,9 @@
         }
         &.item_03 {
             margin-right: 30px;
+            @include pc {
+                margin-right: get_pc(30);
+            }
             .item_content {
                 .thumb {
     
@@ -247,6 +399,9 @@
             width: calc(50% - 15px);
             height: 220px;
             padding-bottom: 0;
+            @include pc {
+                height: get_pc(220);
+            }
             .item_content {
                 >.thumb {
                     position: absolute;
@@ -256,6 +411,10 @@
                     height: 100%;
                     transition: all .3s;
                     border-radius: 20px 0 0 20px;
+                    @include pc {
+                        width: get_pc(356);
+                        border-radius: get_pc(20) 0 0 get_pc(20);
+                    }
                     img {
                         height: 100%;
                         border-radius: 20px 0 0 20px;
@@ -269,17 +428,33 @@
                     min-width: 300px;
                     height: 220px;
                     border-radius: 0 20px 20px 0;
+                    @include pc {
+                        min-width: get_pc(300);
+                        height: get_pc(220);
+                    }
                     .author_ {
                         bottom: 20px;
+                        @include pc {
+                            bottom: get_pc(20);
+                        }
                         .thumb {
                             margin-right: 10px;
+                            @include pc {
+                                margin-right: get_pc(10);
+                            }
                         }
                         .name {
                             margin-top: 16px;
+                            @include pc {
+                                margin-top: get_pc(16);
+                            }
                         }
                     }
                     h3 {
                         margin: 30px 0 0;
+                        @include pc {
+                            margin: get_pc(30) 0 0;
+                        }
                     }
                 }
             }
@@ -292,13 +467,20 @@
                         width: 100%;
                         min-width: 300px;
                         border-radius: 20px;
+                        @include pc {
+                            min-width: get_pc(300);
+                            border-radius: get_pc(20);
+                        }
                         p {
                             visibility: visible;
                             height: 120px;
                             margin-top: -1em;
                             padding-bottom: 30px;
                             opacity: 1;
-                            -ms-filter: "alpha(opacity=100)";
+                            @include pc {
+                                height: get_pc(120);
+                                padding-bottom: get_pc(30);
+                            }
                         }
                     }
                 }
@@ -314,6 +496,11 @@
         padding-bottom: 146px;
         border-radius: 20px;
         box-shadow: 0 10px 20px 0 rgba(6, 0, 0, 0.01);
+        @include pc {
+            margin-bottom: get_pc(30);
+            padding-bottom: get_pc(146);
+            border-radius: get_pc(20);
+        }
         a {
             display: block;
             color: #283135;
@@ -344,6 +531,12 @@
                     background: #283135;
                     font-size: 12px;
                     border-radius: 20px 0 0;
+                    @include pc {
+                        line-height: get_pc(24);
+                        height: get_pc(24);
+                        padding: 0 get_pc(20) 0 get_pc(30);
+                        font-size: get_pc(12);
+                    }
                     &:after {
                         position: absolute;
                         top: 0;
@@ -353,6 +546,11 @@
                         content: '';
                         border-radius: 0 0 24px;
                         background: #283135;
+                        @include pc {
+                            right: get_pc(-20);
+                            width: get_pc(24);
+                            height: get_pc(24);
+                        }
                     }
                 }
             }
@@ -365,22 +563,35 @@
                 border-radius: 0 0 20px 20px;
                 background: #fff;
                 text-align: left;
+                @include pc {
+                    padding: 0 get_pc(30);
+                }
                 .author_ {
                     position: absolute;
                     left: 30px;
                     display: flex;
                     z-index: 2;
                     text-align: center;
+                    @include pc {
+                        left: get_pc(30);
+                    }
                     .avatar_ {
                         display: inline-block;
                         overflow: hidden;
                         border-radius: 50%;
                         width: 46px;
                         height: 46px;
+                        @include pc {
+                            width: get_pc(46);
+                            height: get_pc(46);
+                        }
                     }
                     .name {
                         transform: scale(.9);
                         font-size: 10px;
+                        @include pc {
+                            font-size: get_pc(10);
+                        }
                     }
                 }
                 .date_ {
@@ -393,6 +604,11 @@
                     bottom: 30px;
                     display: block;
                     text-align: right;
+                    @include pc {
+                        font-size: get_pc(12);
+                        right: get_pc(30);
+                        bottom: get_pc(30);
+                    }
                 }
                 h3 {
                     font-weight: 700;
@@ -405,6 +621,10 @@
                     -webkit-font-smoothing: antialiased;
                     font-size: 17px;
                     padding-bottom: 30px;
+                    @include pc {
+                        font-size: get_pc(17);
+                        padding-bottom: get_pc(30);
+                    }
                 }
                 p {
                     font-size: 13px;
@@ -428,24 +648,45 @@
         width: 23%;
         padding: 0 0px 146px;
         margin: 0 13.5px 30px;
+        @include sp {
+            width: 100%;
+            margin: 0 auto get_sp(20);
+        }
         .item_content {
             .txt_desp {
                 padding: 60px 20px 0;
+                @include pc {
+                    padding: get_pc(60) get_pc(20) 0;
+                }
                 .author_ {
                     top: -24px;
                     left: 5px;
                     display: block;
+                    @include pc {
+                        top: get_pc(-24);
+                        left: get_pc(5);
+                    }
                 }
                 .date_ {
                     top: 10px;
                     right: 20px;
+                    @include pc {
+                        top: get_pc(10);
+                        right: get_pc(20);
+                    }
                 }
                 h3 {
                     font-size: 15px;
+                    @include pc {
+                        font-size: get_pc(15);
+                    }
                 }
                 p {
                     font-size: 10px;
                     line-height: 1.5;
+                    @include pc {
+                        font-size: get_pc(10);
+                    }
                 }
             }
         }
@@ -457,6 +698,9 @@
                         height: 80px;
                         margin-top: -1em;
                         opacity: 1;
+                        @include pc {
+                            height: get_pc(80);
+                        }
                     }
                 }
             }

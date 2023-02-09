@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { Logo } from "../../assets";
 import ItemMenu from "./ItemMenu";
 import "./Header.scss";
-function Header() {
-  const [isActive, setIsActive] = useState(false);
-  const handleClick = (event) => {
-    setIsActive((current) => !current);
+function Header({ setIsActive }) {
+  const [Open, setOpen] = useState(false);
+  const handleClick = () => {
+    setOpen((current) => !current);
+    setIsActive(Open);
   };
   return (
     <header className="header">
-      <div className={isActive ? "header_top open" : "header_top"}>
+      <div className={Open ? "header_top active" : "header_top"}>
         <div className="logo fadein_animation">
           <a href="#">
             <img src={Logo} alt="logo" />

@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import FeaturedPost from "../../components/FeaturedPost";
@@ -8,10 +7,11 @@ import NewTopics from "../../components/NewTopics";
 import "./Home.scss";
 
 function Home() {
+  const [isActive, setIsActive] = useState(true);
   return (
     <div>
-      <Header />
-      <div className="inner">
+      <Header isActive={isActive} setIsActive={setIsActive} />
+      <div className={isActive ? "inner" : "inner active"}>
         <div className="list_content_product">
           <NewTopics />
           <FeaturedPost />

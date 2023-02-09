@@ -1,0 +1,82 @@
+@import "../../assets/css/config/variables";
+@import "../../assets/css/mixin/function";
+
+.NewTopics {
+    margin: 0 0 80px 60px;
+    @include pc {
+        margin: 0 0 get_pc(80) get_pc(60);
+    }
+    @include sp {
+        margin: 0 0 get_sp(60);
+    }
+    h2 {
+        font-size: 3.4rem;
+        line-height: 50px;
+        display: inline-block;
+        font-weight: 700;
+        position: relative;
+        z-index: 1;
+        color: #000000;
+        margin-bottom: 40px;
+        @include pc {
+            line-height: get_pc(50);
+            margin-bottom: get_pc(40);
+        }
+        @include sp {
+            margin-bottom: get_sp(40);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50px;
+            display: block;
+            width: 266px;
+            height: 1px;
+            background: #000000;
+            @include pc {
+                top: get_pc(50);
+                width: 100%;
+                height: get_pc(1);
+            }
+        }
+    }
+    p {
+        font-family: Rubik, sans-serif;
+        font-style: italic;
+        position: absolute;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 100px;
+        left: 35%;
+        opacity: 0.1;
+        text-align: left;
+        @include pc {
+            font-size: get_pc(100);
+        }
+        @include sp {
+            font-size: 54px;
+            margin-bottom: get_sp(40);
+            left: 50%;
+            text-align: center;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+    }
+    ul {
+        justify-content: center;
+        display: flex;
+        height: 520px;
+        padding: 60px;
+        transition: all 1.2s;
+        color: rgba(255, 255, 255, 0);
+        @include pc {
+            height: get_pc(520);
+            padding: get_pc(60);
+        }
+        @include sp {
+            display: unset;
+            height: unset;
+            padding: unset;
+        }
+    }
+}

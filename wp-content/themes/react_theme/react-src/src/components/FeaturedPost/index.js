@@ -83,15 +83,37 @@ const post = [
     tlt: "目標から逆算して考える！間違えない最適なWebサイト改善の方法",
     txt: "Webサイトは改善を繰り返していくことでしっかりと効果を発揮することができます。これまでWebサイトの改善を全く行って",
   },
+  {
+    id: 9,
+    cat: "Category",
+    name: "Vu Hoat",
+    date: "2020.2.23",
+    tlt: "目標から逆算して考える！間違えない最適なWebサイト改善の方法",
+    txt: "Webサイトは改善を繰り返していくことでしっかりと効果を発揮することができます。これまでWebサイトの改善を全く行って",
+  },
+  {
+    id: 10,
+    cat: "Category",
+    name: "Vu Hoat",
+    date: "2020.2.23",
+    tlt: "目標から逆算して考える！間違えない最適なWebサイト改善の方法",
+    txt: "Webサイトは改善を繰り返していくことでしっかりと効果を発揮することができます。これまでWebサイトの改善を全く行って",
+  },
 ];
 function FeaturedPost() {
+  const screenWidth = screen.width;
+  console.log(screenWidth);
   return (
-    <section>
+    <section className="post">
+      <h2>List Topics</h2>
+      <p className="txt">List Topics</p>
       <ul className="list_post">
         {post.map((user, index) => (
           <li
             className={
-              index === 0
+              screenWidth <= 960
+                ? "item_before"
+                : index === 0
                 ? "item_ item_01"
                 : "item_before" && index === 1
                 ? "item_ item_02"

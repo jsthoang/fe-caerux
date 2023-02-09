@@ -2,11 +2,21 @@
 @import "../../assets/css/mixin/function";
 
 .inner {
-    padding-top: 100px;
-    background-color: #efefef;
-    .featured_post {
-        .list_content_product {
-            
-        }
-    }
+  padding-top: 100px;
+  background-color: #efefef;
+  transition: all 1.3s ease;
+  @include pc {
+    padding-top: get_pc(100);
+  }
+  @include sp {
+    padding: get_sp(100) get_sp(20);
+    width: 100%;
+  }
+  &.active {
+    transform: perspective(600px) rotateY(4.8deg);
+    box-shadow: 0 50px 100px 0 rgb(40 49 53 / 30%);
+    transition-property: transform;
+    transform-origin: left center;
+    opacity: 1;
+  }
 }
