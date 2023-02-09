@@ -1,16 +1,36 @@
 import React from "react";
-import Header from "../../components/Header";
 
-import Footer from "../../components/Footer";
+import CategoryPost from "../../components/CategoryPost";
+import "./Category.scss";
+import OtherCats from "../../components/OtherCats";
+import Pagenation from "../../components/Pagenation";
 
-function CategoryList() {
+function Category() {
   return (
-    <div>
-      <Header />
-      <h1>CategoryList page</h1>
-      <Footer />
+    <div className="category">
+      <div className="wrapper">
+        <div className="banner">
+          <div className="content_banner">
+            <p>FRONTEND</p>
+          </div>
+        </div>
+        <ul className="list_category">
+          <li><CategoryPost/></li>
+          <li><CategoryPost/></li>
+          <li><CategoryPost/></li>
+          <li><CategoryPost/></li>
+          <li><CategoryPost/></li>
+          <li><CategoryPost/></li>
+          <li><CategoryPost/></li>
+          <li><CategoryPost/></li>
+          <li><CategoryPost/></li>
+          <li><CategoryPost/></li>
+        </ul>
+        <Pagenation/>
+        <OtherCats/>
+      </div>
     </div>
-  );
+  )
 }
 
-export default CategoryList;
+export default Category;

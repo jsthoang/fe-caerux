@@ -1,0 +1,186 @@
+@import "../../assets/css/config/variables";
+@import "../../assets/css/mixin/function";
+@import "../../assets/css/config/reset";
+@import "../../assets/css/base/common";
+
+   html {
+    color: #333;
+    font-size: 62.5%;
+  }
+  .main {
+    background: #f1f1f1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+  .form {
+    width: 950px;
+    min-height: 100px;
+    padding: 85px 170px;
+    text-align: center;
+    background: #fff;
+    border-radius: 5px;
+    margin: 24px;
+    align-self: center;
+    box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
+    @include pc {
+      width: get_pc(950);
+      min-height: get_pc(100);
+      padding: get_pc(85) get_pc(170);
+      border-radius: get_pc(5);
+      margin: get_pc(24);
+      box-shadow: 0 get_pc(2) get_pc(5) 0 rgba(51, 62, 73, 0.1);
+    }
+    @include sp {
+      width: get_sp(340);
+      min-height: get_sp(100);
+      padding: get_sp(25) get_sp(15);
+      border-radius: get_sp(5);
+      margin: unset;
+      box-shadow: 0 get_sp(2) get_sp(5) 0 rgba(51, 62, 73, 0.1);
+    }
+
+    .heading {
+      font-size: 30px;
+      @include pc {
+        font-size: get_pc(30);
+      }
+      @include sp {
+        font-size: get_sp(20);
+      }
+    }
+
+    .form-group {
+      display: flex;
+      margin-bottom: 25px;
+      flex-direction: column;
+      @include pc {
+        margin-bottom: get_pc(25);
+      }
+      @include sp {
+        margin-top: get_sp(14);
+      }
+    }
+
+    .form-label {
+      text-align: left;
+      font-weight: 700;
+      padding-bottom: 18px;
+      line-height: 20px;
+      font-size: 22px;
+      @include pc {
+        padding-bottom: get_pc(18);
+        line-height: get_pc(20);
+        font-size: get_pc(22);
+      }
+      @include sp {
+        padding-bottom: get_sp(8);
+        line-height: get_sp(18);
+        font-size: get_sp(14);
+      }
+    }
+
+    .form-message {
+      text-align: left;
+      font-size: 16px;
+      line-height: 18px;
+      padding: 4px 0 0;
+      color: #f33a58;
+      @include pc {
+        font-size: get_pc(16);
+        line-height: get_pc(18);
+        padding: get_pc(4) 0 0;
+      }
+      @include sp {
+        font-size: get_sp(12);
+        line-height: get_sp(14);
+        padding: get_sp(4) 0 0;
+      }
+    }
+
+    .form-control {
+      height: 60px;
+      padding: 8px 12px;
+      border: 1px solid #b3b3b3;
+      border-radius: 3px;
+      outline: none;
+      font-size: 20px;
+      @include pc {
+        border-radius: get_pc(3);
+        height: get_pc(60);
+        padding: get_pc(8) get_pc(12);
+        font-size: get_pc(20);
+      }
+      @include sp {
+        border-radius: get_sp(3);
+        height: get_sp(40);
+        padding: get_sp(8) get_sp(12);
+        font-size: get_sp(14);
+      }
+      &:hover {
+        border-color: #e8965b;
+      }
+    }
+    .form-submit {
+      outline: none;
+      background-color: #eb6e17;
+      margin-top: 12px;
+      padding: 22px 16px;
+      font-weight: 600;
+      color: #fff;
+      border: none;
+      width: 50%;
+      font-size: 24px;
+      border-radius: 28px;
+      cursor: pointer;
+      @include pc {
+        margin-top: get_pc(12);
+        padding: get_pc(22) get_pc(16);
+        font-size: get_pc(24);
+        border-radius: get_pc(28);
+      }
+      @include sp {
+        margin-top: get_sp(10);
+        padding: get_sp(14) get_sp(16);
+        font-size: get_sp(14);
+        border-radius: get_sp(20);
+      }
+      &:hover {
+        background-color: #ea803a;
+      }
+    }
+    #request {
+      min-height: 80px;
+      @include pc {
+        min-height: get_pc(80);
+      }
+      @include sp {
+        min-height: get_sp(65);
+      }
+    }
+    .confirm {
+      text-align: left;
+      margin-bottom: 15px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      @include pc {
+        margin-bottom: get_pc(15);
+        font-size: get_pc(20);
+      }
+      @include sp {
+        margin-bottom: get_sp(10);
+        font-size: get_sp(14);
+      }
+    }
+  }
+  
+  .spacer {
+    margin-top: 36px;
+    @include pc {
+      margin-top: get_pc(36);
+    }
+    @include sp {
+      margin-top: get_sp(28);
+    }
+  }

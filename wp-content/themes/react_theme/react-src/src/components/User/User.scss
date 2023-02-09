@@ -1,0 +1,372 @@
+@import "../../assets/css/config/variables";
+@import "../../assets/css/mixin/function";
+@import "../../assets/css/config/reset";
+@import "../../assets/css/base/common";
+@import "../../assets/css/module/animation";
+
+.user_info {
+    display: block;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    position: relative;
+    @include pc {
+      width: get_pc(300);
+      min-width: get_pc(300);
+      max-width: get_pc(300);
+    }
+    @include sp {
+      width: get_sp(350);
+      max-width: get_sp(350);
+    }
+    .author_top {
+      position: relative;
+      width: 100%;
+      margin-bottom: 32px;
+      @include pc {
+        margin-bottom: get_pc(32);
+      }
+      @include sp {
+        margin-top: get_sp(15);
+        margin-bottom: get_sp(32);
+      }
+      .author_img {
+        position: relative;
+        border-radius: 50%;
+        background: #fff;
+        width: 74px;
+        height: 74px;
+        margin-bottom: 10px;
+        padding: 12px;
+        animation: entryAuthorAnim .5s linear 1 forwards;
+        @include pc {
+          width: get_pc(74);
+          height: get_pc(74);
+          margin-bottom: get_pc(10);
+          padding: get_pc(12);
+        }
+        @include sp {
+          width: get_sp(74);
+          height: get_sp(74);
+          margin-bottom: get_sp(10);
+          padding: get_sp(12);
+        }
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 74px;
+          height: 74px;
+          content: '';
+          border-radius: 50%;
+          background-color: #eb6e17;
+          @include pc {
+            width: get_pc(74);
+            height: get_pc(74);
+          }
+          @include sp {
+            width: get_sp(74);
+            height: get_sp(74);
+          }
+        }
+        &:after {
+          position: absolute;
+          top: -1px;
+          left: -1px;
+          width: 76px;
+          height: 38px;
+          content: '';
+          border-radius: 38px 38px 0 0;
+          background: #fff;
+          transform: rotate(-40deg);
+          transform-origin: center bottom;
+          @include pc {
+            width: get_pc(76);
+            height: get_pc(38);
+            border-radius: get_pc(38) get_pc(38) 0 0;
+          }
+          @include sp {
+            width: get_sp(76);
+            height: get_sp(38);
+            border-radius: get_sp(38) get_sp(38) 0 0;
+          }
+        }
+        img {
+          position: relative;
+          z-index: 1;
+          border-radius: 50%;
+        }
+      }
+      .author_tlt {
+        position: absolute;
+        top: 40px;
+        left: 90px;
+        font-family: Rubik,sans-serif;
+        font-size: 12px;
+        font-style: italic;
+        display: inline-block;
+        margin-right: 16px;
+        color: #6a828c;
+        @include pc {
+          margin-right: get_pc(16);
+          top: get_pc(40);
+          left: get_pc(90);
+          font-size: get_pc(12);
+        }
+        @include sp {
+          margin-right: get_sp(16);
+          top: get_sp(25);
+          font-size: get_sp(12);
+          left: get_sp(90);
+        }
+      }
+      .author_name {
+        font-size: 16px;
+        position: absolute;
+        top: 64px;
+        left: 90px;
+        font-weight: 700;
+        display: inline-block;
+        @include pc {
+          top: get_pc(64);
+          font-size: get_pc(16);
+          left: get_pc(90);
+        }
+        @include sp {
+          top: get_sp(50);
+          font-size: get_sp(16);
+          left: get_sp(90);
+        }
+      }
+    }
+    .date_top {
+      font-size: 19px;
+      position: relative;
+      color: #283135;
+      margin: 0 20px 16px;
+      line-height: 1;
+      text-align: left;
+      @include pc {
+        font-size: get_pc(19);
+        margin: 0 get_pc(20) get_pc(16);
+      }
+      @include sp {
+        font-size: get_sp(15);
+        margin: 0 get_sp(20) get_sp(16);
+      }
+    }
+    .category_top {
+      position: relative;
+      margin: 0 20px 16px;
+      text-align: left;
+      @include pc {
+        margin: 0 get_sp(20) get_sp(16);
+      }
+      @include sp {
+        margin: 0 get_sp(18) get_sp(12);
+      }
+      ul {
+        display: inline-block;
+        li {
+          a {
+            font-weight: 700;
+            color: #283135;
+            font-size: 16px;
+            @include pc {
+              font-size: get_pc(16);
+            }
+            @include sp {
+              font-size: get_sp(16);
+            }
+          }
+        }
+      }
+    }
+    .tag_top {
+      margin-bottom: 40px;
+      padding-left: 10px;
+      text-align: left;
+      @include pc {
+        margin-bottom: get_pc(40);
+        padding-left: get_pc(10);
+      }
+      @include sp {
+        margin-bottom: get_sp(-20);
+        padding-left: get_sp(10);
+      }
+      a {
+        font-size: 14px;
+        line-height: 36px;
+        height: 36px;
+        margin-right: 8px;
+        padding: 0 10px 0 20px;
+        border-radius: 20px 5px 5px 20px;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 10px;
+        transition: all .3s ease;
+        color: #283135;
+        background: #eef1f2;
+        @include pc {
+          font-size: get_pc(14);
+          line-height: get_pc(36);
+          height: get_pc(36);
+          margin-right: get_pc(8);
+          padding: 0 get_pc(10) 0 get_pc(20);
+          border-radius: get_pc(20) get_pc(5) get_pc(5) get_pc(20);
+          margin-bottom: get_pc(10);
+        }
+        @include sp {
+          font-size: get_sp(13);
+          line-height: get_sp(36);
+          height: get_sp(36);
+          margin-right: get_sp(8);
+          padding: 0 get_sp(10) 0 get_sp(20);
+          border-radius: get_sp(20) get_sp(5) get_sp(5) get_sp(20);
+          margin-bottom: get_sp(10);
+        }
+        &:before {
+          position: absolute;
+          content: '';
+          border-radius: 50%;
+          background: #fff;
+          top: calc(50% - 2.5px);
+          left: 8px;
+          width: 5px;
+          height: 5px;
+          @include pc {
+            left: get_pc(8);
+            width: get_pc(5);
+            height: get_pc(5);
+          }
+          @include sp {
+            left: get_sp(8);
+            width: get_sp(5);
+            height: get_sp(5);
+          }
+        }
+      }
+    }
+    .category_content {
+      h3 {
+        font-family: Rubik,sans-serif;
+        font-style: italic;
+        position: relative;
+        margin-bottom: 16px;
+        font-size: 20px;
+        font-weight: 700;
+        @include pc {
+          margin-bottom: get_pc(16);
+          font-size: get_pc(20);
+        }
+        @include sp {
+          font-size: get_sp(20);
+          margin-bottom: get_sp(16);
+        }
+      }
+      ul {
+        li {
+          margin-bottom: 20px;
+          @include pc {
+            margin-bottom: get_pc(20);
+          }
+          @include sp {
+            margin-bottom: get_sp(20);
+          }
+          a {
+            font-weight: 700;
+            position: relative;
+            display: block;
+            padding: 16px 30px;
+            transition: all .3s;
+            color: #283135;
+            border-radius: 20px;
+            background: #f8f8f8;
+            box-shadow: 0 5px 0 #e4e4e4;
+            text-align: left;
+            @include pc {
+              font-size: get_pc(16);
+              padding: get_pc(16) get_pc(30);
+              border-radius: get_pc(20);
+              box-shadow: 0 get_pc(5) 0 #e4e4e4;
+            }
+            @include sp {
+              font-size: get_sp(16);
+              padding: get_sp(16) get_sp(30);
+              border-radius: get_sp(20);
+              box-shadow: 0 get_sp(5) 0 #e4e4e4;
+            }
+            &:after {
+              position: absolute;
+              top: calc(50% - 3px);
+              right: 30px;
+              width: 16px;
+              height: 6px;
+              content: '';
+              border-radius: 3px;
+              background: #000;
+              @include pc {
+                right: get_pc(30);
+                width: get_pc(16);
+                height: get_pc(6);
+                border-radius: get_pc(3);
+              }
+              @include sp {
+                right: get_sp(30);
+                width: get_sp(16);
+                height: get_sp(6);
+                border-radius: get_sp(3);
+              }
+            }
+            &:hover {
+              transform: translateY(3px);
+              box-shadow: 0 2px 0 #e4e4e4;
+            }
+          }
+          &.cats_web {
+            a {
+              &:after {
+                background: #eb6e17;
+              }
+            }
+          }
+          &.cats_mark {
+            a {
+              &:after {
+                background: #13b5b1;
+              }
+            }
+          }
+          &.cats_landing {
+            a {
+              &:after {
+                background: #fee400;
+              }
+            }
+          }
+          &.cats_hack {
+            a {
+              &:after {
+                background: #e86243;
+              }
+            }
+          }
+          &.cats_seo {
+            a {
+              &:after {
+                background: #5a64e8;
+              }
+            }
+          }
+          &.cats_appli {
+            a {
+              &:after {
+                background: #8957a1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

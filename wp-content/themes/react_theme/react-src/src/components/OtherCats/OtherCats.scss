@@ -1,0 +1,128 @@
+@import "../../assets/css/config/variables";
+@import "../../assets/css/mixin/function";
+@import "../../assets/css/config/reset";
+@import "../../assets/css/base/common";
+
+.other_cats {
+    position: relative;
+    width: auto;
+    padding: 30px;
+    background: #f4f4f4;
+    margin: -160px 130px 60px;
+    border-radius: 60px;
+    @include pc {
+        padding: get_pc(30);
+        margin: get_pc(-160) get_pc(130) get_pc(60);
+        border-radius: get_pc(60);
+    }
+    @include sp {
+        width: get_sp(340);
+        margin: 0 auto get_sp(30);
+        padding: get_sp(20);
+        border-radius: get_sp(30);
+    }
+    h3 {
+        font-family: Rubik,sans-serif;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 36px;
+        margin-bottom: 36px;
+        @include pc {
+            font-size: get_pc(36);
+            margin-bottom: get_pc(36);
+        }
+        @include sp {
+            font-size: get_sp(24);
+            margin-bottom: get_sp(18);
+        }
+    }
+    ul {
+        text-align: center;
+        li {
+            position: relative;
+            display: inline-block;
+            margin: 0 32px 16px;
+            @include pc {
+                margin: 0 get_pc(32) get_pc(16);
+            }
+            @include sp {
+                display: block;
+                text-align: left;
+            }
+            a {
+                font-size: 18px;
+                font-weight: 700;
+                position: relative;
+                padding-left: 1.5em;
+                color: #283135;
+                @include pc {
+                    font-size: get_pc(18);
+                }
+                @include sp {
+                    font-size: get_sp(16);
+                }
+                &:before {
+                    position: absolute;
+                    top: 0.4em;
+                    left: 0;
+                    width: 15px;
+                    height: 4px;
+                    content: '';
+                    border-radius: 3px;
+                    background: #283135;
+                    @include pc {
+                        width: get_pc(15);
+                        height: get_pc(4);
+                        border-radius: get_pc(3);
+                    }
+                    @include sp {
+                        width: get_sp(12);
+                        height: get_sp(3);
+                    }
+                }
+            }
+            &.cats_web {
+                a {
+                    &:before {
+                        background: #eb6e17;
+                    }
+                }
+            }
+            &.cats_mark {
+                a {
+                    &:before {
+                        background: #13b5b1;
+                    }
+                }
+            }
+            &.cats_landing {
+                a {
+                    &:before {
+                        background: #fee400;
+                    }
+                }
+            }
+            &.cats_hack {
+                a {
+                    &:before {
+                        background: #e86243;
+                    }
+                }
+            }
+            &.cats_seo {
+                a {
+                    &:before {
+                        background: #5a64e8;
+                    }
+                }
+            }
+            &.cats_appli {
+                a {
+                    &:before {
+                        background: #8957a1;
+                    }
+                }
+            }
+        }
+    }
+}
