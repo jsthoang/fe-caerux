@@ -105,14 +105,16 @@
         font-size: 12px;
         font-style: italic;
         display: inline-block;
-        margin-right: 1em;
+        margin-right: 16px;
         color: #6a828c;
         @include pc {
+          margin-right: get_pc(16);
           top: get_pc(40);
           left: get_pc(90);
           font-size: get_pc(12);
         }
         @include sp {
+          margin-right: get_sp(16);
           top: get_sp(25);
           font-size: get_sp(12);
           left: get_sp(90);
@@ -251,7 +253,7 @@
         font-family: Rubik,sans-serif;
         font-style: italic;
         position: relative;
-        margin-bottom: 1em;
+        margin-bottom: 16px;
         font-size: 20px;
         font-weight: 700;
         @include pc {

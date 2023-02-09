@@ -106,11 +106,13 @@
       outline: none;
       font-size: 20px;
       @include pc {
+        border-radius: get_pc(3);
         height: get_pc(60);
         padding: get_pc(8) get_pc(12);
         font-size: get_pc(20);
       }
       @include sp {
+        border-radius: get_sp(3);
         height: get_sp(40);
         padding: get_sp(8) get_sp(12);
         font-size: get_sp(14);
