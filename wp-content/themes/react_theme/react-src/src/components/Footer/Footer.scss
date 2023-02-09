@@ -1,0 +1,204 @@
+@import "../../assets/css/config/variables";
+@import "../../assets/css/mixin/function";
+@import "../../assets/css/config/reset";
+@import "../../assets/css/base/common";
+
+#footer {
+    .inner {
+        position: relative;
+        width: 100%;
+        background: #131d22;
+        padding: 100px 0 50px;
+        @include pc {
+            padding: get_pc(100) 0 get_pc(50);
+        }
+        @include sp {
+            padding: get_sp(30) get_sp(20);
+        }
+        .wrapper {
+            width: 1200px;
+            margin: auto;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #283135;
+            display: flex;
+            justify-content: space-between;
+            @include pc {
+                width: get_pc(1200);
+                padding-bottom: get_pc(20);
+            }
+            @include sp {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .logo_footer {
+                font-size: 12px;
+                text-align: left;
+                color: #666;
+                width: 300px;
+                @include pc {
+                    font-size: get_pc(12);
+                    width: get_pc(300);
+                }
+                @include sp {
+                    margin-bottom: get_sp(20);
+                    width: 100%;
+                }
+                .logo_img {
+                    width: 260px;
+                    margin-bottom: 10px;
+                    opacity: .3;
+                    -ms-filter: "alpha(opacity=30)";
+                    @include pc {
+                        width: get_pc(260);
+                        margin-bottom: get_pc(10);
+                    }
+                }
+                p {
+                    font-size: 12px;
+                    text-align: left;
+                    color: #666;
+                    @include pc {
+                        font-size: get_pc(12);
+                    }
+                }
+            }
+            .nav_footer {
+                width: 540px;
+                display: flex;
+                text-align: left;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                @include pc {
+                    width: get_pc(540);
+                }
+                li {
+                    width: 33.333%;
+                    a {
+                        color: white;
+                        font-size: 14px;
+                        @include pc {
+                            font-size: get_pc(14);
+                        }
+                        @include sp {
+                            font-size: get_sp(12);
+                        }
+                    }
+                }
+            }
+            .contact_footer {
+                font-size: 13px;
+                font-style: italic;
+                line-height: 1.3;
+                position: absolute;
+                display: block;
+                color: #283135;
+                background: #fff;
+                box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.8);
+                top: -48px;
+                left: 50%;
+                width: 480px;
+                height: 96px;
+                transform: translateX(-50%);
+                padding-top: 22px;
+                padding-right: 46px;
+                border-radius: 48px;
+                @include pc {
+                    font-size: get_pc(13);
+                    box-shadow: 0 get_pc(3) get_pc(16) 0 rgba(0, 0, 0, 0.8);
+                    top: get_pc(-48);
+                    width: get_pc(480);
+                    height: get_pc(96);
+                    padding-top: get_pc(22);
+                    padding-right: get_pc(46);
+                    border-radius: get_pc(48);
+                }
+                @include sp {
+                    font-size: get_sp(11);
+                    width: get_sp(200);
+                    height: get_sp(56);
+                    padding-top: get_sp(13);
+                    top: get_sp(-28);
+                }
+                &:hover {
+                    span {
+                        &.arrow_contact {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                span {
+                    font-family: Rubik,sans-serif;
+                    font-size: 28px;
+                    display: block;
+                    @include pc {
+                        font-size: get_pc(28);
+                    }
+                    @include sp {
+                        font-size: get_sp(14);
+                    }
+                    &.arrow_contact {
+                        position: absolute;
+                        display: block;
+                        transition: all .3s ease;
+                        text-align: center;
+                        border-radius: 50%;
+                        background: #26404b;
+                        top: 20px;
+                        right: 20px;
+                        width: 56px;
+                        height: 56px;
+                        @include pc {
+                            top: get_pc(20);
+                            right: get_pc(20);
+                            width: get_pc(56);
+                            height: get_pc(56);
+                        }
+                        @include sp {
+                            top: get_sp(14);
+                            right: get_sp(20);
+                            width: get_sp(30);
+                            height: get_sp(30);
+                        }
+                    }
+                    .arrow_next {
+                        position: absolute;
+                        top: 50%;
+                        &:before {
+                            transform: rotate(-45deg);
+                            margin-top: -10px;
+                            @include pc {
+                                margin-top: get_pc(-10);
+                            }
+                        }
+                        &:after {
+                            transform: rotate(45deg);
+                            margin-top: -3px;
+                            @include pc {
+                                margin-top: get_pc(-3);
+                            }
+                        }
+                        &:before, &:after {
+                            position: absolute;
+                            background: #fff;
+                            content: '';
+                            border-radius: 3px;
+                            width: 4px;
+                            height: 14px;
+                            @include pc {
+                                border-radius: get_pc(3);
+                                width: get_pc(4);
+                                height: get_pc(14);
+                            }
+                            @include sp {
+                                border-radius: get_sp(3);
+                                width: get_sp(4);
+                                height: get_sp(12);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

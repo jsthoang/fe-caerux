@@ -1,0 +1,59 @@
+@import "../../assets/css/config/variables";
+@import "../../assets/css/mixin/function";
+@import "../../assets/css/config/reset";
+@import "../../assets/css/base/common";
+
+.category {
+    .wrapper {
+        background-color: #eaedef;
+        @include sp {
+            padding-bottom: 10px;
+        }
+        .banner {
+            width: 100%;
+            background-color: #eb6e17;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include pc {
+                height: get_pc(400);
+            }
+            @include sp {
+                height: get_sp(145);
+            }
+            .content_banner {
+                p {
+                    color: white;
+                    font-size: 50px;
+                    font-family: Rubik,sans-serif;
+                    font-weight: 700;
+                    font-style: italic;
+                    text-transform: uppercase;
+                    @include pc {
+                        font-size: get_pc(50);
+                    }
+                    @include sp {
+                        font-size: get_sp(30);
+                    }
+                }
+            }
+        }
+        .list_category {
+            padding: 100px 100px 100px;
+            display: -ms-grid;
+            display: grid;
+            gap: 30px;
+            -ms-grid-columns: (minmax(280px,1fr))[auto-fit];
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            @include pc {
+                padding: get_pc(100) get_pc(100) get_pc(100);
+                gap: get_pc(30);
+            }
+            @include sp {
+                display: block;
+                padding: get_sp(20) get_sp(20) get_sp(40);
+            }
+        }
+    }
+}

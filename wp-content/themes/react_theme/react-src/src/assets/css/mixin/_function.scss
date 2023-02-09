@@ -36,12 +36,6 @@
     }
 }
 
-@mixin tablet { //pc
-    @media only screen and (max-width: ($breakpoint-pc)) and (min-width: ($breakpoint-md)) {
-        @content;
-    }
-}
-
 @mixin sp { //sp
     @media (max-width: ($breakpoint-md)) {
         @content;
@@ -49,11 +43,6 @@
 }
 
 @function get_pc($fsize, $viewport:1920) {
-    $rate: 100 / $viewport;
-    @return $rate * $fsize * 1vw;
-}
-
-@function get_tablet($fsize, $viewport:1000) {
     $rate: 100 / $viewport;
     @return $rate * $fsize * 1vw;
 }
