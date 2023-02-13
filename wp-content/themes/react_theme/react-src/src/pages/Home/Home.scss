@@ -12,6 +12,9 @@
     padding: get_sp(100) get_sp(20);
     width: 100%;
   }
+}
+.anime {
+  transition: all 1.3s ease;
   &.active {
     transform: perspective(600px) rotateY(4.8deg);
     box-shadow: 0 50px 100px 0 rgb(40 49 53 / 30%);

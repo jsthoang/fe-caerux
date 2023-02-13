@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
@@ -12,16 +12,27 @@ function App() {
       console.log(res.data);
     });
   }, []);
+  const [isActive, setIsActive] = useState(true);
   return (
     <div className="App">
-      <Header/>
+      <Header isActive={isActive} setIsActive={setIsActive} />
       <Routes>
         {publicRoutes.map((route, index) => {
           const Page = route.component;
-          return <Route key={index} path={route.path} element={<Page />} />;
+          return (
+            <Route
+              key={index}
+              path={route.path}
+              element={
+                <div className={isActive ? "anime" : "anime active"}>
+                  <Page />
+                </div>
+              }
+            />
+          );
         })}
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
